@@ -32,14 +32,25 @@
             color: white;
             border: none;
             cursor: pointer;
+            margin-bottom: 10px;
         }
         button:hover {
             background-color: #45a049;
         }
-        #resumen {
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        #resumen, #resultadoOperaciones {
             background-color: #f9f9f9;
             padding: 15px;
             border-radius: 5px;
+            margin-top: 20px;
+        }
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
     </style>
 </head>
@@ -68,7 +79,7 @@
                     <input type="number" id="monto" min="0.01" step="0.01" required>
                 </div>
                 
-                <button type="button" onclick="registrarMovimiento()">Registrar</button>
+                <button type="button" id="btnRegistrar">Registrar</button>
             </form>
         </div>
         
@@ -76,6 +87,18 @@
             <h3>Resumen</h3>
             <p>Total de movimientos: 0</p>
             <p>Saldo total: $0.00</p>
+        </div>
+        
+        <div class="buttons-container">
+            <h3>Operaciones Funcionales</h3>
+            <button id="btnListarNombres">Listar Nombres (map)</button>
+            <button id="btnFiltrarEgresos">Filtrar Egresos > $100 (filter)</button>
+            <button id="btnBuscarMovimiento">Buscar por Nombre (find)</button>
+        </div>
+        
+        <div id="resultadoOperaciones">
+            <h3>Resultados</h3>
+            <p>Aquí se mostrarán los resultados de las operaciones funcionales.</p>
         </div>
     </div>
 
