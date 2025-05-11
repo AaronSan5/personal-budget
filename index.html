@@ -52,6 +52,10 @@
             flex-direction: column;
             gap: 10px;
         }
+        /* Estilos para la lista de movimientos */
+        #listaMovimientos {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -62,7 +66,7 @@
             <h2>Registrar Movimiento</h2>
             <form id="formulario">
                 <div class="form-group">
-                    <label for="nombre">Nombre del movimiento:</label>
+                    <label for="nombre">Descripción del movimiento:</label>
                     <input type="text" id="nombre" required>
                 </div>
                 
@@ -83,6 +87,12 @@
             </form>
         </div>
         
+        <!-- La lista de movimientos se agregará dinámicamente aquí -->
+        <div id="listaMovimientos">
+            <h3>Lista de Movimientos</h3>
+            <!-- Aquí se mostrarán los movimientos renderizados -->
+        </div>
+        
         <div id="resumen">
             <h3>Resumen</h3>
             <p>Total de movimientos: 0</p>
@@ -91,9 +101,9 @@
         
         <div class="buttons-container">
             <h3>Operaciones Funcionales</h3>
-            <button id="btnListarNombres">Listar Nombres (map)</button>
+            <button id="btnListarNombres">Listar Descripciones (map)</button>
             <button id="btnFiltrarEgresos">Filtrar Egresos > $100 (filter)</button>
-            <button id="btnBuscarMovimiento">Buscar por Nombre (find)</button>
+            <button id="btnBuscarMovimiento">Buscar por Descripción (find)</button>
         </div>
         
         <div id="resultadoOperaciones">
